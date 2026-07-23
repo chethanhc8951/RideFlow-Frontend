@@ -5,6 +5,7 @@ import {
     StyleSheet,
     TouchableOpacity,
     ScrollView,
+    SafeAreaView
 } from "react-native";
 
 import {
@@ -18,14 +19,11 @@ const HomeScreen = () => {
 
     return (
 
-        <ScrollView
-            style={styles.container}
-            showsVerticalScrollIndicator={false}
-        >
+        <SafeAreaView style={styles.container}>
 
             {/* Header */}
 
-            <View style={styles.header}>
+            < View style={styles.header} >
 
                 <Ionicons
                     name="menu"
@@ -39,43 +37,132 @@ const HomeScreen = () => {
                     color="#000"
                 />
 
-            </View>
+            </View >
+            <ScrollView
+                style={styles.scrollContainer}
+                showsVerticalScrollIndicator={false}
+            >
+
+                {/* Welcome Text */}
+
+                <Text style={styles.helloText}>
+                    Hello, Rider! 👋
+                </Text>
+
+                <Text style={styles.welcomeText}>
+                    Welcome back
+                </Text>
 
 
-            {/* Welcome Text */}
 
-            <Text style={styles.helloText}>
-                Hello, Rider! 👋
-            </Text>
-
-            <Text style={styles.welcomeText}>
-                Welcome back
-            </Text>
+                {/* RideFlow Card */}
 
 
+                <View style={styles.passportCard}>
 
-            {/* RideFlow Card */}
+                    <View>
 
+                        <Text style={styles.cardTitle}>
+                            RideFlow Passport
+                        </Text>
 
-            <View style={styles.passportCard}>
-
-                <View>
-
-                    <Text style={styles.cardTitle}>
-                        RideFlow Passport
-                    </Text>
-
-                    <Text style={styles.cardSubTitle}>
-                        Your digital document wallet
-                    </Text>
+                        <Text style={styles.cardSubTitle}>
+                            Your digital document wallet
+                        </Text>
 
 
-                    <TouchableOpacity
-                        style={styles.viewButton}
-                    >
+                        <TouchableOpacity
+                            style={styles.viewButton}
+                        >
 
-                        <Text style={styles.viewButtonText}>
-                            View My Documents
+                            <Text style={styles.viewButtonText}>
+                                View My Documents
+                            </Text>
+
+                        </TouchableOpacity>
+
+                    </View>
+
+
+                    <View>
+
+                        <Ionicons
+                            name="shield-checkmark"
+                            size={70}
+                            color="#7FFFD4"
+                        />
+
+                    </View>
+
+                </View>
+
+
+
+                {/* Quick Actions */}
+
+
+                <Text style={styles.sectionTitle}>
+                    Quick Actions
+                </Text>
+
+
+                <View style={styles.quickContainer}>
+
+                    <TouchableOpacity style={styles.quickCard}>
+
+                        <MaterialIcons
+                            name="folder"
+                            size={28}
+                            color="#16A34A"
+                        />
+
+                        <Text style={styles.quickText}>
+                            My Documents
+                        </Text>
+
+                    </TouchableOpacity>
+
+
+                    <TouchableOpacity style={styles.quickCard}>
+
+                        <Ionicons
+                            name="add-circle"
+                            size={28}
+                            color="#2563EB"
+                        />
+
+                        <Text style={styles.quickText}>
+                            Add Document
+                        </Text>
+
+                    </TouchableOpacity>
+
+
+                    <TouchableOpacity style={styles.quickCard}>
+
+                        <Ionicons
+                            name="person-circle"
+                            size={28}
+                            color="#7C3AED"
+                        />
+
+                        <Text style={styles.quickText}>
+                            Profile
+                        </Text>
+
+                    </TouchableOpacity>
+
+
+                    <TouchableOpacity style={styles.quickCard}>
+
+                        <Feather
+                            name="maximize"
+                            size={28}
+                            color="#F97316"
+                        />
+
+                        <Text style={styles.quickText}>
+                            Scan QR
                         </Text>
 
                     </TouchableOpacity>
@@ -83,192 +170,107 @@ const HomeScreen = () => {
                 </View>
 
 
-                <View>
 
-                    <Ionicons
-                        name="shield-checkmark"
-                        size={70}
-                        color="#7FFFD4"
-                    />
-
-                </View>
-
-            </View>
+                {/* Document Overview */}
 
 
 
-            {/* Quick Actions */}
+                <View style={styles.documentHeader}>
 
-
-            <Text style={styles.sectionTitle}>
-                Quick Actions
-            </Text>
-
-
-            <View style={styles.quickContainer}>
-
-                <TouchableOpacity style={styles.quickCard}>
-
-                    <MaterialIcons
-                        name="folder"
-                        size={28}
-                        color="#16A34A"
-                    />
-
-                    <Text style={styles.quickText}>
-                        My Documents
+                    <Text style={styles.sectionTitle}>
+                        Document Overview
                     </Text>
 
-                </TouchableOpacity>
 
+                    <TouchableOpacity>
 
-                <TouchableOpacity style={styles.quickCard}>
+                        <Text style={styles.viewAll}>
+                            View All
+                        </Text>
 
-                    <Ionicons
-                        name="add-circle"
-                        size={28}
-                        color="#2563EB"
-                    />
-
-                    <Text style={styles.quickText}>
-                        Add Document
-                    </Text>
-
-                </TouchableOpacity>
-
-
-                <TouchableOpacity style={styles.quickCard}>
-
-                    <Ionicons
-                        name="person-circle"
-                        size={28}
-                        color="#7C3AED"
-                    />
-
-                    <Text style={styles.quickText}>
-                        Profile
-                    </Text>
-
-                </TouchableOpacity>
-
-
-                <TouchableOpacity style={styles.quickCard}>
-
-                    <Feather
-                        name="maximize"
-                        size={28}
-                        color="#F97316"
-                    />
-
-                    <Text style={styles.quickText}>
-                        Scan QR
-                    </Text>
-
-                </TouchableOpacity>
-
-            </View>
-
-
-
-            {/* Document Overview */}
-
-
-
-            <View style={styles.documentHeader}>
-
-                <Text style={styles.sectionTitle}>
-                    Document Overview
-                </Text>
-
-
-                <TouchableOpacity>
-
-                    <Text style={styles.viewAll}>
-                        View All
-                    </Text>
-
-                </TouchableOpacity>
-
-            </View>
-
-
-
-            <View style={styles.documentContainer}>
-
-
-                <View style={styles.overViewCard}>
-
-                    <Text style={styles.smallTitle}>
-                        Total
-                    </Text>
-
-                    <Text style={styles.number}>
-                        6
-                    </Text>
+                    </TouchableOpacity>
 
                 </View>
 
 
 
-                <View style={styles.overViewCard}>
+                <View style={styles.documentContainer}>
 
-                    <Text
-                        style={[
-                            styles.smallTitle,
-                            { color: "green" }
-                        ]}
-                    >
-                        Valid
-                    </Text>
 
-                    <Text style={styles.number}>
-                        5
-                    </Text>
+                    <View style={styles.overViewCard}>
+
+                        <Text style={styles.smallTitle}>
+                            Total
+                        </Text>
+
+                        <Text style={styles.number}>
+                            6
+                        </Text>
+
+                    </View>
+
+
+
+                    <View style={styles.overViewCard}>
+
+                        <Text
+                            style={[
+                                styles.smallTitle,
+                                { color: "green" }
+                            ]}
+                        >
+                            Valid
+                        </Text>
+
+                        <Text style={styles.number}>
+                            5
+                        </Text>
+
+                    </View>
+
+
+
+                    <View style={styles.overViewCard}>
+
+                        <Text
+                            style={[
+                                styles.smallTitle,
+                                { color: "orange" }
+                            ]}
+                        >
+                            Expiring
+                        </Text>
+
+                        <Text style={styles.number}>
+                            1
+                        </Text>
+
+                    </View>
+
+
+
+                    <View style={styles.overViewCard}>
+
+                        <Text
+                            style={[
+                                styles.smallTitle,
+                                { color: "red" }
+                            ]}
+                        >
+                            Expired
+                        </Text>
+
+                        <Text style={styles.number}>
+                            0
+                        </Text>
+
+                    </View>
+
 
                 </View>
 
-
-
-                <View style={styles.overViewCard}>
-
-                    <Text
-                        style={[
-                            styles.smallTitle,
-                            { color: "orange" }
-                        ]}
-                    >
-                        Expiring
-                    </Text>
-
-                    <Text style={styles.number}>
-                        1
-                    </Text>
-
-                </View>
-
-
-
-                <View style={styles.overViewCard}>
-
-                    <Text
-                        style={[
-                            styles.smallTitle,
-                            { color: "red" }
-                        ]}
-                    >
-                        Expired
-                    </Text>
-
-                    <Text style={styles.number}>
-                        0
-                    </Text>
-
-                </View>
-
-
-            </View>
-
-        </ScrollView>
+            </ScrollView>
+        </SafeAreaView>
 
     );
 };
@@ -283,7 +285,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#FFFFFF",
         paddingHorizontal: 18,
-        paddingTop: 55,
+        paddingTop: 40,
     },
 
     header: {

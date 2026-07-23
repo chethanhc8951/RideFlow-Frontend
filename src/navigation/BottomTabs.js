@@ -7,7 +7,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 import HomeScreen from "../screens/HomeScreen";
 import DocumentsScreen from "../screens/DocumentsScreen";
-import AddBikeScreen from "../screens/AddBikeScreen";
+import AddDocumentScreen from "../screens/AddDocumentScreen";
 import AlertsScreen from "../screens/AlertsScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
@@ -61,7 +61,7 @@ const BottomTabs = () => {
 
             <Tab.Screen
                 name="Add"
-                component={AddBikeScreen}
+                component={AddDocumentScreen}
                 options={{
                     tabBarIcon:({color,size})=>(
                         <Ionicons
